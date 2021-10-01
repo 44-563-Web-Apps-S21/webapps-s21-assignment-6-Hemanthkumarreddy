@@ -41,13 +41,13 @@
     </script>
 
     <form>
-        <label for="form2_secret">Enter the secret word</label>
-        <input type="password" id="form2_secret" name="form2_secret" value="secret"> <br>
+        <label for="form2_secretPhrase">Enter the secret phrase</label>
+        <input type="password" id="form2_secretPhrase" name="form2_secretPhrase" value="Let me in"> <br>
 
-        <label for="form2_guess">Enter a guess</label>
-        <input type="text" id="form2_guess" name="form2_guess"><br>
+        <label for="form2_phraseToCheck">Enter a phrase</label>
+        <input type="text" id="form2_phrasetoCheck" name="form2_phraseToCheck"><br>
 
-        <input type="button" onclick="processGuess()" value="Check the guess">
+        <input type="button" onclick="processPhrase()" value="Check the phrase">
 
         <p id="tagged">This text changes and gives us the count of number of correct or wrong guess</p>
     </form>
@@ -56,18 +56,18 @@
         let correct = 0;
         let wrong = 0;
 
-        function processGuess(){
-            secret = document.getElementById("form2_secret").value
-            guess = document.getElementById("form2_guess").value
+        function processPhrase(){
+            secret = document.getElementById("form2_secretPhrase").value
+            guess = document.getElementById("form2_phraseToCheck").value
             tagged = document.getElementById("tagged")
             if(secret === guess){
                 correct = correct+1;
-                alert("Congratulations");
+                alert("Access allowed");
                 tagged.innerHTML = "Guess Correct count = "+correct;
             }
             else{
                 wrong = wrong+1;
-                alert("Sorry");
+                alert("Access Denied");
                 tagged.innerHTML = "Guess Wrong count = "+wrong;
             }
         }
