@@ -49,7 +49,7 @@
 
         <input type="button" onclick="processPhrase()" value="Check the phrase">
 
-        <p id="tagged">This text changes and gives us the count of number of correct or wrong guess</p>
+        <p id="tagged">This text changes and gives us the count of number of correct or wrong phrases entered.</p>
     </form>
 
     <script>
@@ -63,12 +63,12 @@
             if(secret === guess){
                 correct = correct+1;
                 alert("Access allowed");
-                tagged.innerHTML = "Guess Correct count = "+correct;
+                tagged.innerHTML = "Phrase Correct count = "+correct;
             }
             else{
                 wrong = wrong+1;
                 alert("Access Denied");
-                tagged.innerHTML = "Guess Wrong count = "+wrong;
+                tagged.innerHTML = "Phrase Wrong count = "+wrong;
             }
         }
     </script>
