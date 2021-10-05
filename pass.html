@@ -77,24 +77,30 @@
 
     <div class="container">
         <img src="Iguana.jpg" alt="Iguana" id="imgClickAndChange" height="200" width="200" onclick="newImage()">
+        <p id="changeValue">Here each image case values are displayed.</p>
     </div>
+
 
     <script>
         let usingImage = 1;
 
         function newImage() {
+            valuesChaged = document.getElementById("changeValue")
             switch (usingImage) {
                 case 1:
                     document.getElementById("imgClickAndChange").src = "Panther.jpg";
                     usingImage += 1;
+                    valuesChanged.innerHTML = "click 1 : " + usingImage;
                     break;
                 case 2:
                     document.getElementById("imgClickAndChange").src = "TasmanianDevil.jpg";
                     usingImage += 2;
+                    valuesChanged.innerHTML = "click 2 : " + usingImage;
                     break;
                 default :
                     document.getElementById("imgClickAndChange").src = "Iguana.jpg";
                     usingImage = 1;
+                    valuesChanged.innerHTML = "click 3 : " + usingImage;
                     break;
             }
         }
