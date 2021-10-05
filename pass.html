@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>
         JS interaction
     </title>
 </head>
+
 <body>
 
     <h2>Hidden things by Hemanth Kumar Reddy Pidaparathy</h2>
@@ -17,7 +19,7 @@
         <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
         <input type="button" onclick="resolveForm()" value="Get values from form">
-        
+
     </form>
 
 
@@ -56,26 +58,47 @@
         let correct = 0;
         let wrong = 0;
 
-        function processPhrase(){
+        function processPhrase() {
             secret = document.getElementById("form2_secretPhrase").value
             guess = document.getElementById("form2_phraseToCheck").value
             tagged = document.getElementById("tagged")
-            if(secret === guess){
-                correct = correct+1;
+            if (secret === guess) {
+                correct = correct + 1;
                 alert("Access allowed");
-                tagged.innerHTML = "Phrase Correct count = "+correct;
+                tagged.innerHTML = "Phrase Correct count = " + correct;
             }
-            else{
-                wrong = wrong+1;
+            else {
+                wrong = wrong + 1;
                 alert("Access Denied");
-                tagged.innerHTML = "Phrase Wrong count = "+wrong;
+                tagged.innerHTML = "Phrase Wrong count = " + wrong;
             }
         }
     </script>
 
     <div class="container">
-        
+        <img src="Iguana.jpg" alt="Iguana" id="imgClickAndChange" height="200" width="200" onclick="newImage()">
     </div>
+
+    <script>
+        let usingImage = 1;
+
+        function newImage() {
+            switch (usingImage) {
+                case 1:
+                    document.getElementById("imgClickAndChange").src = "Panther.jpg";
+                    usingImage += 1;
+                    break;
+                case 2:
+                    document.getElementById("imgClickAndChange").src = "TasmanianDevil.jpg";
+                    usingImage += 2;
+                    break;
+                default :
+                    document.getElementById("imgClickAndChange").src = "Iguana.jpg";
+                    usingImage = 1;
+                    break;
+            }
+        }
+    </script>
 
 </body>
 
