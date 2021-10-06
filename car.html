@@ -12,14 +12,14 @@
     <h2>Hemanth Kumar Reddy Pidaparathy Orders a car</h2>
 
     <form>
-        <input type="checkbox" id="cb1_electric" name="topping1" value="electric">
-        <label for="cb1_cheese">Electric</label></br>
+        <input type="checkbox" id="cb1_electric" name="property1" value="electric">
+        <label for="cb1_electric">Electric</label></br>
 
-        <input type="checkbox" id="cb1_ac" name="topping2" value="ac">
-        <label for="cb1_olive">AC</label></br>
+        <input type="checkbox" id="cb1_ac" name="property2" value="ac">
+        <label for="cb1_ac">AC</label></br>
 
-        <input type="checkbox" id="cb1_gps" name="topping3" value="gps">
-        <label for="cb1_onion">GPS</label></br>
+        <input type="checkbox" id="cb1_gps" name="property3" value="gps">
+        <label for="cb1_gps">GPS</label></br>
 
         <input type="button" onclick="orderCar()" value="Order a Car">
     </form>
@@ -30,6 +30,22 @@
         let my_car = {};
         function orderCar(){
             my_car = {};
+            electric = document.getElementById("cb1_electric").checked
+            ac = document.getElementById("cb1_ac").checked
+            gps = document.getElementById("cb1_gps").checked
+            confirmed = confirm ("Are the values " + electric + ", " + ac + " and " + gps)
+
+            taggd = document.getElementById("tagged")
+
+            if (confirmed){
+                my_car = {electric, ac, gps}
+            }
+            else {
+                my_car = {electric, ac, gps}
+            }
+            my_car = JSON.stringify(my_car)
+            taggd.innerHTML = my_car
+            my_car = JSON.parse(my_car)
         }
     </script>
 
