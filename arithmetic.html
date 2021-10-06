@@ -64,8 +64,8 @@
             resultValue = document.getElementById("computedValue")
             let result = "";
             for (let i = 1; i <= expoVal; i++) {
-                result += Math.pow(baseVal,i) ;
-                if (i<expoVal){
+                result += Math.pow(baseVal, i);
+                if (i < expoVal) {
                     result += ", ";
                 }
                 else {
@@ -75,6 +75,56 @@
             resultValue.innerHTML = "Powers of " + baseVal + " are:  " + result;
         }
     </script>
+
+    <form>
+        <input type="radio" id="addition" name="operations" value="plus" onclick="processRadio()"> <label
+            for="addition">+</label><br>
+        <input type="radio" id="subtraction" name="operations" value="minus" onclick="processRadio()"> <label
+            for="subtraction">-</label><br>
+        <input type="radio" id="multiplication" name="operations" value="times" onclick="processRadio()"> <label
+            for="multiplication">*</label><br>
+        <input type="radio" id="division" name="operations" value="divide" onclick="processRadio()"> <label
+            for="division">/</label><br>
+    </form>
+
+    <p id="tagged">Here the results get updated.</p>
+
+    <script>
+        function processRadio() {
+            baseVal = document.getElementById("baseValue").value
+            expoVal = document.getElementById("exponentValue").value
+            
+            baseVal = Number(baseVal)
+            expoVal = Number(expoVal)
+
+            let operVal = 0;
+            
+            addopt = document.getElementById("addition").checked
+            subopt = document.getElementById("subtraction").checked
+            mulopt = document.getElementById("multiplication").checked
+            divopt = document.getElementById("division").checked
+
+            resultValue = document.getElementById("tagged")
+
+            if(addopt){
+                operVal = baseVal + expoVal;
+            }
+
+            else if(subopt){
+                operVal = baseVal - expoVal;
+            }
+
+            else if(mulopt){
+                operVal = baseVal * expoVal;
+            }
+
+            else if(divopt){
+                operVal = baseVal / expoVal;
+            }
+            resultValue.innerHTML = "Operation values : " +operVal;
+        }
+    </script>
+
 
 </body>
 

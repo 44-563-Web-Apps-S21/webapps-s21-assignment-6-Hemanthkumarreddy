@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Cars JavaScript
+    </title>
+</head>
+
+<body>
+
+    <h2>Hemanth Kumar Reddy Pidaparathy Orders a car</h2>
+
+    <form>
+        <input type="checkbox" id="cb1_electric" name="topping1" value="electric">
+        <label for="cb1_cheese">Electric</label></br>
+
+        <input type="checkbox" id="cb1_ac" name="topping2" value="ac">
+        <label for="cb1_olive">AC</label></br>
+
+        <input type="checkbox" id="cb1_gps" name="topping3" value="gps">
+        <label for="cb1_onion">GPS</label></br>
+
+        <input type="button" onclick="orderCar()" value="Order a Car">
+    </form>
+
+    <p id="tagged">The values will be updated.</p>
+
+    <script>
+        let my_car = {};
+        function orderCar(){
+            my_car = {};
+        }
+    </script>
+
+    <form>
+        <label for="form1_age">What is your age </label>
+        <input type="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+
+        <label for="form1_nick">What is your nickname </label>
+        <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
+
+        <input type="button" onclick="resolveForm()" value="Get values from form">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+
+        function resolveForm() {
+            console.log("Getting form values")
+            age = document.getElementById("form1_age").value
+            nick = document.getElementById("form1_nick").value
+            confirmed = confirm("Are these the values? " + age + " and " + nick)
+
+            out = document.getElementById("result")
+            if (confirmed) {
+                out.innerHTML = "Values were confirmed"
+            } else {
+                out.innerHTML = "Values were not confirmed"
+            }
+        }
+    </script>
+
+</body>
+
+</html>
