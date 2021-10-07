@@ -28,20 +28,20 @@
 
     <script>
         let my_car = {};
-        function orderCar(){
+        function orderCar() {
             my_car = {};
             electric = document.getElementById("cb1_electric").checked
             ac = document.getElementById("cb1_ac").checked
             gps = document.getElementById("cb1_gps").checked
-            confirmed = confirm ("Are the values " + electric + ", " + ac + " and " + gps)
+            confirmed = confirm("Are the values " + electric + ", " + ac + " and " + gps)
 
             taggd = document.getElementById("tagged")
 
-            if (confirmed){
-                my_car = {electric, ac, gps}
+            if (confirmed) {
+                my_car = { electric, ac, gps }
             }
             else {
-                my_car = {electric, ac, gps}
+                my_car = { electric, ac, gps }
             }
             my_car = JSON.stringify(my_car)
             taggd.innerHTML = my_car
@@ -50,32 +50,28 @@
     </script>
 
     <form>
-        <label for="form1_age">What is your age </label>
-        <input type="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
+        <label for="propertyId">Enter a property</label>
+        <input type="text" id="propertyId" name="propertyId" value="color"> <br>
 
-        <label for="form1_nick">What is your nickname </label>
-        <input type="text" id="form1_nick" name="form1_nick" autofocus> <br>
+        <label for="valueId">Enter a value</label>
+        <input type="text" id="valueId" name="valueId"> <br>
 
-        <input type="button" onclick="resolveForm()" value="Get values from form">
+        <input type="button" onclick="updateCar()" value="Update the car">
     </form>
 
-
-    <p id="result">This text will be replaced </p>
+    <p id="result">This text will be replaced.</p>
 
     <script>
+        function updateCar() {
+            propertyVal = document.getElementById("propertyID").value
+            valueVal = document.getElementById("valueId").value
 
-        function resolveForm() {
-            console.log("Getting form values")
-            age = document.getElementById("form1_age").value
-            nick = document.getElementById("form1_nick").value
-            confirmed = confirm("Are these the values? " + age + " and " + nick)
+            outValue = document.getElementById("result")
+            let my_car = "";
 
-            out = document.getElementById("result")
-            if (confirmed) {
-                out.innerHTML = "Values were confirmed"
-            } else {
-                out.innerHTML = "Values were not confirmed"
-            }
+            my_car = propertyVal + " " + valueVal 
+
+            outValue.innerHTML = "The property and values are: " +my_car
         }
     </script>
 
