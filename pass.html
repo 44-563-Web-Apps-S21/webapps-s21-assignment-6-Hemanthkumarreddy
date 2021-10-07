@@ -68,15 +68,21 @@
                 tagged.innerHTML = "Phrase Correct count = " + correct;
             }
             else {
-                wrong = wrong + 1;
-                alert("Access Denied");
-                tagged.innerHTML = "Phrase Wrong count = " + wrong;
+                if (wrong > 2) {
+                    alert("Account Locked!Please try again");
+                    tagged.innerHTML = "Account is locked. Please try again after few minutes!";
+                }
+                else {
+                    wrong = wrong + 1;
+                    alert("Access Denied");
+                    tagged.innerHTML = "Phrase Wrong count = " + wrong;
+                }
             }
         }
     </script>
 
     <div class="container">
-        <img src="Iguana.jpg" alt="Iguana" id="imgClickAndChange" height="200" width="200" onclick="newImage()">
+        <img src="Iguana.jpg" alt="Iguana" id="imgClickAndChange" ] height="200" width="200" onclick="newImage()">
         <p id="changeValue">Here each image case values are displayed when clicked on image.</p>
     </div>
 

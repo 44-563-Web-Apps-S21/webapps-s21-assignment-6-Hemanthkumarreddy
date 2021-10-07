@@ -39,13 +39,14 @@
 
             if (confirmed) {
                 my_car = { electric, ac, gps }
+                my_car = JSON.stringify(my_car)
+                taggd.innerHTML = my_car
+                my_car = JSON.parse(my_car)
             }
             else {
                 my_car = { electric, ac, gps }
+                taggd.innerHTML = "Values were not confirmed, so it returns an empty string."
             }
-            my_car = JSON.stringify(my_car)
-            taggd.innerHTML = my_car
-            my_car = JSON.parse(my_car)
         }
     </script>
 
@@ -69,7 +70,7 @@
             resultValue = document.getElementById("propertyValue")
             let my_car = "";
             my_car = property + " : " + values
-            
+
             resultValue.innerHTML = "Properties and values of car is follows - " + my_car;
         }
     </script>
