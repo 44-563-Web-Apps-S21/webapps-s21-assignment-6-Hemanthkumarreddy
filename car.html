@@ -50,28 +50,27 @@
     </script>
 
     <form>
-        <label for="propertyId">Enter a property</label>
-        <input type="text" id="propertyId" name="propertyId" value="color"> <br>
+        <label for="propertyVal">Enter a property</label>
+        <input id="propertyVal" type="text" value="color"> <br>
 
-        <label for="valueId">Enter a value</label>
-        <input type="text" id="valueId" name="valueId"> <br>
+        <label for="valueVal">Enter a Value</label>
+        <input id="valueVal" type="text"> <br>
 
-        <input type="button" onclick="updateCar()" value="Update the car">
+        <input type="button" onclick="updateCar()" value="Update the Car">
     </form>
 
-    <p id="result">This text will be replaced.</p>
+    <p id="propertyValue">The answer gets updated here.</p>
 
     <script>
+
         function updateCar() {
-            propertyVal = document.getElementById("propertyID").value
-            valueVal = document.getElementById("valueId").value
-
-            outValue = document.getElementById("result")
+            property = document.getElementById("propertyVal").value
+            values = document.getElementById("valueVal").value
+            resultValue = document.getElementById("propertyValue")
             let my_car = "";
-
-            my_car = propertyVal + " " + valueVal 
-
-            outValue.innerHTML = "The property and values are: " +my_car
+            my_car = property + " : " + values
+            
+            resultValue.innerHTML = "Properties and values of car is follows - " + my_car;
         }
     </script>
 
